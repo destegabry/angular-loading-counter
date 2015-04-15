@@ -23,7 +23,7 @@
     "tests"
   ],
   "main": [
-    "./dist/angular-loader.js"
+    "dist/angular-loading-counter.js"
   ],
   "dependencies": {
     "angular": ">=1.2.0"
