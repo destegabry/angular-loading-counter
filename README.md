@@ -2,6 +2,10 @@
 
 Displays a visual feedback for background operations like API calls or long lasting tasks
 
+## Documentation
+
+Available on [gh-pages](http://destegabry.github.io/angular-loading-counter/ "API documentation")
+
 ## Dependencies
 - required:
 	AngularJS >= 1.2.0
@@ -43,7 +47,7 @@ app.config(['$httpProvider', 'LoadingCounterProvider', function ($httpProvider, 
 	$httpProvider.interceptors.push('LoadingCounter');
 }]);
 ```
-See the documentation for more details
+See the [documentation](http://destegabry.github.io/angular-loading-counter/ "API documentation") for more details
 
 ## Development
 
