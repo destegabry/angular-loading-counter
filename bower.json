@@ -1,0 +1,33 @@
+{
+	"name": "angular-loading-counter",
+	"version": "0.0.1",
+	"authors": [
+		"Gabriele Destefanis <gabriele.destefanis@gmail.com>"
+	],
+  "description": "Displays a visual feedback for background operations like API calls or long lasting tasks",
+	"keywords": [
+    "angular",
+    "AngularJS",
+    "loader",
+    "loading",
+    "counter",
+    "async",
+    "spinner"
+  ],
+	"license": "MIT",
+	"ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": [
+    "./dist/angular-loader.js"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "devDependencies": {
+  }
+}

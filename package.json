@@ -1,0 +1,22 @@
+{
+  "name": "angular-loading-counter",
+  "namelower": "angular-loading-counter",
+  "version": "0.0.1",
+  "description": "Displays a visual feedback for background operations like API calls or long lasting tasks",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:destegabry/angular-loader.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-ngdocs": "^0.2.7"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
