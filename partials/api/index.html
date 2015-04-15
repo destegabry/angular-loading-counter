@@ -1,0 +1,51 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="angular-loading-counter-page"><h2 id="angular-loading-counter">angular-loading-counter</h2>
+<p>An AngularJS module to count time consuming tasks and show a visual feedback while those are performed.
+To quick start it, inject the dsg.loadingCounter module in you angular application
+and push the <a href="#/api/dsg.loadingCounter.LoadingCounter">LoadingCounter</a> service through your http interceptors:</p>
+<pre class="prettyprint linenums">
+  var app = angular.module('yourAngularApp', ['dsg.loadingCounter']);
+  
+  app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('LoadingCounter');
+  });
+</pre>
+<p>You can configure the <a href="#/api/dsg.loadingCounter.LoadingCounter">LoadingCounter</a> service to exclude some URLs from being counted:</p>
+<pre class="prettyprint linenums">
+  angular
+    app.config(function ($httpProvider, LoadingCounterProvider) {
+    
+      // Configure an exclusion for HTTP GET paths starting with `/api/utils/country`
+      LoadingCounterProvider.addExclusion(/^\/api\/utils\/country/i, /get/i);
+     
+      // Push LoadingCounter in the http interceptors
+      $httpProvider.interceptors.push('LoadingCounter');
+    });
+</pre>
+<p>Then add the <a href="#/api/dsg.loadingCounter.directive:loadingCounter">loadingCounter</a> directive in your <code>index.html</code> page:</p>
+<pre class="prettyprint linenums">
+  &lt;html&gt;
+    ...
+    &lt;body ng-app="yourAngularApp"&gt;
+      ...
+      &lt;div class="spinner" loading-counter&gt;
+        Loading...
+      &lt;/div&gt;
+      ...
+    &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+<p><a href="#/api/dsg.loadingCounter.directive:loadingCounter">loadingCounter</a> directive advanced usage:</p>
+<pre class="prettyprint linenums">
+  &lt;div class="spinner" 
+       loading-counter 
+       hidden-class="hidden" 
+       pending-tasks-count="tasks"&gt;
+    &lt;div&gt;Loading...&lt;/div&gt;
+    &lt;div&gt;Still have to finish {{$parent.tasks}} tasks&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+</div></div>

@@ -1,0 +1,57 @@
+@ngdoc overview
+@name angular-loading-counter
+@description
+# angular-loading-counter
+
+An AngularJS module to count time consuming tasks and show a visual feedback while those are performed.
+To quick start it, inject the dsg.loadingCounter module in you angular application
+and push the {@link dsg.loadingCounter.LoadingCounter LoadingCounter} service through your http interceptors:
+
+<pre>
+  var app = angular.module('yourAngularApp', ['dsg.loadingCounter']);
+  
+  app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('LoadingCounter');
+  });
+</pre>
+
+You can configure the {@link dsg.loadingCounter.LoadingCounter LoadingCounter} service to exclude some URLs from being counted:
+
+<pre>
+  angular
+    app.config(function ($httpProvider, LoadingCounterProvider) {
+    
+      // Configure an exclusion for HTTP GET paths starting with `/api/utils/country`
+      LoadingCounterProvider.addExclusion(/^\/api\/utils\/country/i, /get/i);
+     
+      // Push LoadingCounter in the http interceptors
+      $httpProvider.interceptors.push('LoadingCounter');
+    });
+</pre>
+
+Then add the {@link dsg.loadingCounter.directive:loadingCounter loadingCounter} directive in your `index.html` page:
+
+<pre>
+  <html>
+    ...
+    <body ng-app="yourAngularApp">
+      ...
+      <div class="spinner" loading-counter>
+        Loading...
+      </div>
+      ...
+    </body>
+  </html>
+</pre>
+
+{@link dsg.loadingCounter.directive:loadingCounter loadingCounter} directive advanced usage:
+
+<pre>
+  <div class="spinner" 
+       loading-counter 
+       hidden-class="hidden" 
+       pending-tasks-count="tasks">
+    <div>Loading...</div>
+    <div>Still have to finish {{$parent.tasks}} tasks</div>
+  </div>
+</pre>
