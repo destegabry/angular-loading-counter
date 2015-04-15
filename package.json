@@ -1,7 +1,7 @@
 {
   "name": "angular-loading-counter",
   "namelower": "angular-loading-counter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Displays a visual feedback for background operations like API calls or long lasting tasks",
   "readme": "README.md",
   "repository": {
